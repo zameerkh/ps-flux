@@ -1,16 +1,14 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { getCourses } from "../api/courseApi";
 
-class CoursesPage extends React.Component {
-  state = {
-    courses: []
-  };
+function CoursesPage() {
+  const [courses, setCourses] = useState([])
+useEffect(()=>{
+  getCourses().then(_courses => setCourses(_courses))
+}, [])
 
-  componentDidMount() {
-    getCourses().then(courses => this.setState({ courses: courses }));
-  }
 
-  renderRow(course) {
+  function renderRow(course) {
     return (
       <tr key={course.id}>
         <td>{course.title}</td>
@@ -19,7 +17,7 @@ class CoursesPage extends React.Component {
       </tr>
     );
   }
-  render() {
+
     return (
       <>
         <h2>Courses</h2>
@@ -31,11 +29,11 @@ class CoursesPage extends React.Component {
               <th>Category</th>
             </tr>
           </thead>
-          <tbody>{this.state.courses.map(this.renderRow)}</tbody>
+          <tbody>{courses.map(renderRow)}</tbody>
         </table>
       </>
     );
   }
-}
+
 
 export default CoursesPage;
