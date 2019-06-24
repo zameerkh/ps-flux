@@ -12,7 +12,7 @@ class CoursesPage extends React.Component {
 
   renderRow(course) {
     return (
-      <tr>
+      <tr key={course.id}>
         <td>{course.title}</td>
         <td>{course.authorId}</td>
         <td>{course.category}</td>
@@ -25,9 +25,11 @@ class CoursesPage extends React.Component {
         <h2>Courses</h2>
         <table className="table">
           <thead>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Category</th>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Category</th>
+            </tr>
           </thead>
           <tbody>{this.state.courses.map(this.renderRow)}</tbody>
         </table>
