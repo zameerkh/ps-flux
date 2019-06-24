@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function CoursesList(props)
 {
@@ -27,13 +27,13 @@ function CoursesList(props)
     )
 }
 
-// CoursesList.propTypes = {
-//     courses: PropTypes.arrayOf(PropTypes.shape({
-//         id: PropTypes.number.isRequired,
-//         title : PropTypes.string.isRequired,
-//         authorId : PropTypes.number.isRequired,
-//         category: PropTypes.string.isRequired
+CoursesList.propTypes = {
+    courses: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title : PropTypes.string.isRequired,
+        authorId : PropTypes.number.isRequired,
+        category: PropTypes.string.isRequired
 
-//     })).isRequired
-// }
+    })).isRequired
+}
 export default CoursesList
