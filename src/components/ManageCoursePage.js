@@ -11,12 +11,12 @@ const ManageCoursePage = props => {
     category: ""
   });
 
-  function handleChange(event) {
-    const updatedCourse = {
+  function handleChange({ target }) {
+    // destructuring to make concise . See above
+    setCourse({
       ...course,
-      [event.target.name]: event.target.value
-    }; //computed property syntax
-    setCourse(updatedCourse);
+      [target.name]: target.value
+    });
   }
   return (
     <>
