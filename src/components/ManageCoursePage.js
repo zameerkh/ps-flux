@@ -7,6 +7,7 @@ import * as courseActions from "../actions/courseActions";
 
 const ManageCoursePage = props => {
   const [errors, setErros] = useState({});
+  const [courses, setCourses] = useState(courseStore.getCourses());
   //use array destructuring and useState hook instead of class component
   const [course, setCourse] = useState({
     id: null,
@@ -17,11 +18,19 @@ const ManageCoursePage = props => {
   });
 
   useEffect(() => {
+    courseStore.addChangeListner(onChange);
     const slug = props.match.params.slug; // from path /courses:slug
-    if (slug) {
+    if (courses.length === 0) {
+      courseActions.loadCourses();
+    } else if (slug) {
       setCourse(courseStore.getCoursesBySlug(slug));
     }
-  }, [props.match.params.slug]);
+    return () => courseStore.removeChangeListner(onChange);
+  }, [courses.length, props.match.params.slug]);
+
+  function onChange() {
+    setCourses(courseStore.getCourses());
+  }
 
   function handleChange({ target }) {
     // destructuring to make concise . See above
