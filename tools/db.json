@@ -74,25 +74,9 @@
       "id": 11,
       "slug": "fdfdf",
       "title": "fdfdf",
-      "authorId": 2,
-      "category": "fdfdf",
-      "createdAt": 1561863656309
-    },
-    {
-      "id": 12,
-      "slug": "fdfdf",
-      "title": "fdfdf",
-      "authorId": 2,
-      "category": "fdfdf",
-      "createdAt": 1561863658021
-    },
-    {
-      "id": 13,
-      "slug": "fdfdf",
-      "title": "fdfdf",
       "authorId": 1,
       "category": "fdfdf",
-      "createdAt": 1561863674640
+      "createdAt": 1561864159850
     }
   ],
   "authors": [
