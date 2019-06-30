@@ -72,11 +72,27 @@
     },
     {
       "id": 11,
-      "slug": "design-patterns-by-example",
-      "title": "Design patterns by example",
+      "slug": "fdfdf",
+      "title": "fdfdf",
+      "authorId": 2,
+      "category": "fdfdf",
+      "createdAt": 1561863656309
+    },
+    {
+      "id": 12,
+      "slug": "fdfdf",
+      "title": "fdfdf",
+      "authorId": 2,
+      "category": "fdfdf",
+      "createdAt": 1561863658021
+    },
+    {
+      "id": 13,
+      "slug": "fdfdf",
+      "title": "fdfdf",
       "authorId": 1,
-      "category": "Design",
-      "createdAt": 1561863509084
+      "category": "fdfdf",
+      "createdAt": 1561863674640
     }
   ],
   "authors": [
