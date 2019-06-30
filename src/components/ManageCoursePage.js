@@ -11,16 +11,17 @@ const ManageCoursePage = props => {
     category: ""
   });
 
-  function handleTitleChange(event) {
-    // const updatedCourse = { ...course }; //spread operator copies the course
-    // updatedCourse.title = event.target.value;
-    const updatedCourse = { ...course, title: event.target.value }; //concise syntax
+  function handleChange(event) {
+    const updatedCourse = {
+      ...course,
+      [event.target.name]: event.target.value
+    }; //computed property syntax
     setCourse(updatedCourse);
   }
   return (
     <>
       <h2>Manage Course</h2>
-      <CourseForm course={course} onTitleChange={handleTitleChange} />
+      <CourseForm course={course} onChange={handleChange} />
       {/* <Prompt when={true} message="Are you sure you want to leave?" /> */}
       {/* {props.match.params.slug} */}
     </>
