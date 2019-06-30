@@ -22,3 +22,12 @@ export function loadCourses() {
     });
   });
 }
+
+export function deleteCourse(id) {
+  return courseApi.deleteCourse(id).then(() => {
+    dispatcher.dispatch({
+      actionType: actionTypes.DELETE_COURSE,
+      id: id // use object short hand syntax and remove RHS if need be
+    });
+  });
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import courseStore from "../stores/courseStore";
 import CoursesList from "./CoursesList";
 import { Link } from "react-router-dom";
-import { loadCourses } from "../actions/courseActions";
+import { loadCourses, deleteCourse } from "../actions/courseActions";
 
 function CoursesPage() {
   const [courses, setCourses] = useState(courseStore.getCourses());
@@ -22,7 +22,7 @@ function CoursesPage() {
       <Link className="btn btn-primary" to="/course">
         Add course
       </Link>
-      <CoursesList courses={courses} />
+      <CoursesList courses={courses} deleteCourse={deleteCourse} />
     </>
   );
 }
